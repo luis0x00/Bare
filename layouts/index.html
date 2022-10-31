@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+  <section id="content">
+    <section id="about">
+      <main>
+        <header>{{ .Site.Title }}</a></header>
+        {{.Content}}
+      </main>
+    </section>
+    <h2>Posts</h2>
+    <ul class="posts_listing">
+      {{ range where .Site.Pages "Params.type" "post" }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          <div id="sub-header">
+            {{ .PublishDate.Format "Jan 2006" }}
+          </div>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ partial "footer.html" . }}

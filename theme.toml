@@ -1,0 +1,10 @@
+name = "Bare"
+license = ""
+licenselink = ""
+description = ""
+tags = []
+features = []
+min_version = 0.90
+
+[author]
+  name = "Luis Vázquez"

@@ -1,0 +1,32 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+<section id="content" class="single">
+  <section id="about">
+    <header><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></header>
+  </section>
+
+  <h1 class="title">{{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Title }} {{ end }}</h1>
+
+  <div id="sub-header">
+      {{ .PublishDate.Format "Jan 2006" }}
+  </div>
+
+  <div class="entry-content">
+    {{ .Content }}
+  </div>
+
+  <div id="links">
+    {{ if .PrevInSection }}
+      <a class="basic-alignment left" href="{{.PrevInSection.Permalink}}">&laquo; {{.PrevInSection.Title}}</a>
+    {{ end }}
+    {{ if .NextInSection }}
+      <a class="basic-alignment left" href="{{.NextInSection.Permalink}}">{{.NextInSection.Title}} &raquo;</a>
+    {{ end }}
+  </div>
+</section>
+</div>
+
+{{ partial "footer.html" . }}
+
+
